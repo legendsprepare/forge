@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Users } from "lucide-react-native";
 
 export default function SocialScreen() {
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons name="account-group" size={64} color="#FF6B35" />
+      <Users size={64} color="#FF6B35" />
       <Text style={styles.title}>Social</Text>
       <Text style={styles.subtitle}>Connect with friends</Text>
     </View>

@@ -1,6 +1,12 @@
 import { Stack } from "expo-router";
 import { PaperProvider } from "react-native-paper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { StatusBar } from "expo-status-bar";
+import { useEffect } from "react";
+import * as SplashScreen from "expo-splash-screen";
+
+// Prevent the splash screen from auto-hiding before asset loading is complete
+SplashScreen.preventAutoHideAsync();
 
 const queryClient = new QueryClient();
 
@@ -15,6 +21,15 @@ const theme = {
 };
 
 export default function RootLayout() {
+  useEffect(() => {
+    // Hide splash screen after a short delay
+    const timer = setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <PaperProvider theme={theme}>
@@ -23,6 +38,7 @@ export default function RootLayout() {
           <Stack.Screen name="(auth)" />
           <Stack.Screen name="(app)" />
         </Stack>
+        <StatusBar style="light" />
       </PaperProvider>
     </QueryClientProvider>
   );

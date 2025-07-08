@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { User } from "lucide-react-native";
 
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons name="account" size={64} color="#6B46C1" />
+      <User size={64} color="#6B46C1" />
       <Text style={styles.title}>Profile</Text>
       <Text style={styles.subtitle}>Manage your account</Text>
     </View>

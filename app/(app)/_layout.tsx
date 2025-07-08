@@ -1,5 +1,11 @@
 import { Tabs } from "expo-router";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { 
+  Home, 
+  Dumbbell, 
+  TrendingUp, 
+  Users, 
+  User 
+} from "lucide-react-native";
 
 const THEME_COLOR = "#6B46C1";
 
@@ -24,7 +30,7 @@ export default function AppLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" size={size} color={color} />
+            <Home size={size} color={color} />
           ),
         }}
       />
@@ -33,7 +39,7 @@ export default function AppLayout() {
         options={{
           title: "Workouts",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="dumbbell" size={size} color={color} />
+            <Dumbbell size={size} color={color} />
           ),
         }}
       />
@@ -42,11 +48,7 @@ export default function AppLayout() {
         options={{
           title: "Progress",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="chart-line"
-              size={size}
-              color={color}
-            />
+            <TrendingUp size={size} color={color} />
           ),
         }}
       />
@@ -55,11 +57,7 @@ export default function AppLayout() {
         options={{
           title: "Social",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="account-group"
-              size={size}
-              color={color}
-            />
+            <Users size={size} color={color} />
           ),
         }}
       />
@@ -68,7 +66,7 @@ export default function AppLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" size={size} color={color} />
+            <User size={size} color={color} />
           ),
         }}
       />

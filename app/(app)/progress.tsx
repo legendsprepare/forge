@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { TrendingUp } from "lucide-react-native";
 
 export default function ProgressScreen() {
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons name="chart-line" size={64} color="#4ECDC4" />
+      <TrendingUp size={64} color="#4ECDC4" />
       <Text style={styles.title}>Progress</Text>
       <Text style={styles.subtitle}>Track your improvements</Text>
     </View>

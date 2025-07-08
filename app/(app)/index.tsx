@@ -1,6 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { 
+  Zap, 
+  Flame, 
+  Dumbbell, 
+  TrendingUp, 
+  Users, 
+  ChevronRight,
+  Trophy 
+} from "lucide-react-native";
 import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
@@ -12,7 +20,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.avatarSection}>
           <View style={styles.lightningAvatar}>
-            <MaterialCommunityIcons name="flash" size={40} color="#FFD700" />
+            <Zap size={40} color="#FFD700" />
           </View>
           <View style={styles.userInfo}>
             <Text style={styles.welcomeText}>Welcome back!</Text>
@@ -21,7 +29,7 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.streakBadge}>
-          <MaterialCommunityIcons name="fire" size={24} color="#FF6B35" />
+          <Flame size={24} color="#FF6B35" />
           <Text style={styles.streakText}>0 🔥</Text>
         </View>
       </View>
@@ -42,44 +50,36 @@ export default function HomeScreen() {
           style={styles.actionCard}
           onPress={() => router.push("/(app)/workouts")}
         >
-          <MaterialCommunityIcons
-            name="weight-lifter"
-            size={48}
-            color="#6B46C1"
-          />
+          <Dumbbell size={48} color="#6B46C1" />
           <View style={styles.cardContent}>
             <Text style={styles.cardTitle}>Start Workout</Text>
             <Text style={styles.cardSubtitle}>Begin your training session</Text>
           </View>
-          <MaterialCommunityIcons name="chevron-right" size={24} color="#666" />
+          <ChevronRight size={24} color="#666" />
         </Pressable>
 
         <Pressable
           style={styles.actionCard}
           onPress={() => router.push("/(app)/progress")}
         >
-          <MaterialCommunityIcons name="chart-line" size={48} color="#4ECDC4" />
+          <TrendingUp size={48} color="#4ECDC4" />
           <View style={styles.cardContent}>
             <Text style={styles.cardTitle}>View Progress</Text>
             <Text style={styles.cardSubtitle}>Track your improvements</Text>
           </View>
-          <MaterialCommunityIcons name="chevron-right" size={24} color="#666" />
+          <ChevronRight size={24} color="#666" />
         </Pressable>
 
         <Pressable
           style={styles.actionCard}
           onPress={() => router.push("/(app)/social")}
         >
-          <MaterialCommunityIcons
-            name="account-group"
-            size={48}
-            color="#FF6B35"
-          />
+          <Users size={48} color="#FF6B35" />
           <View style={styles.cardContent}>
             <Text style={styles.cardTitle}>Social Hub</Text>
             <Text style={styles.cardSubtitle}>Connect with friends</Text>
           </View>
-          <MaterialCommunityIcons name="chevron-right" size={24} color="#666" />
+          <ChevronRight size={24} color="#666" />
         </Pressable>
       </View>
 
@@ -87,7 +87,7 @@ export default function HomeScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Today's Challenge</Text>
         <View style={styles.challengeCard}>
-          <MaterialCommunityIcons name="trophy" size={32} color="#FFD700" />
+          <Trophy size={32} color="#FFD700" />
           <View style={styles.challengeContent}>
             <Text style={styles.challengeTitle}>
               Complete Your First Workout
