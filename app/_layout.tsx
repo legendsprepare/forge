@@ -3,7 +3,8 @@ import { PaperProvider } from "react-native-paper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import * as SplashScreen from "expo-splash-screen";
+import * as SplashScreen from "expo-splash-screen"
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete
 SplashScreen.preventAutoHideAsync();
@@ -21,6 +22,7 @@ const theme = {
 };
 
 export default function RootLayout() {
+  useFrameworkReady();
   useEffect(() => {
     // Hide splash screen after a short delay
     const timer = setTimeout(() => {
